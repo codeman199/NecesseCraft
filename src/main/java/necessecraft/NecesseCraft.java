@@ -24,7 +24,23 @@ public class NecesseCraft {
     }
 
     public void postInit() {
+        Recipes.registerModRecipe(new Recipe(
+                "woodenplank",
+                4,
+                RecipeTechRegistry.NONE,
+                new Ingredient[]{
+                        new Ingredient("anylog", 1)
+                }
+        ).showAfter("woodboat"));
 
+        Recipes.registerModRecipe(new Recipe(
+                "craftingtable",
+                1,
+                RecipeTechRegistry.NONE,
+                new Ingredient[]{
+                        new Ingredient("woodenplank", 4)
+                }
+        ).showAfter("woodenplank"));
     }
 
 }
