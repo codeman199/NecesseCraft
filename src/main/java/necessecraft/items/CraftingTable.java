@@ -11,14 +11,16 @@ import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.toolItem.ToolType;
 import necesse.inventory.recipe.Tech;
+import necesse.level.gameObject.CraftingStationObject;
 import necesse.level.gameObject.WorkstationObject;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
+import necessecraft.NecesseCraft;
 
 import java.awt.*;
 import java.util.List;
 
-public class CraftingTable extends WorkstationObject {
+public class CraftingTable extends CraftingStationObject {
 
     private GameTexture texture;
 
@@ -80,6 +82,6 @@ public class CraftingTable extends WorkstationObject {
 
     @Override
     public Tech[] getCraftingTechs() {
-        return new Tech[]{RecipeTechRegistry.WORKSTATION, RecipeTechRegistry.NONE};
+        return new Tech[]{NecesseCraft.CRAFTING_TABLE};
     }
 }
