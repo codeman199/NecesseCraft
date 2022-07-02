@@ -1,5 +1,6 @@
-package examplemod.examples;
+package necessecraft.items;
 
+import necesse.engine.registries.RecipeTechRegistry;
 import necesse.engine.tickManager.TickManager;
 import necesse.entity.mobs.PlayerMob;
 import necesse.entity.objectEntity.ObjectEntity;
@@ -9,24 +10,28 @@ import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
 import necesse.gfx.gameTexture.GameTexture;
 import necesse.inventory.item.toolItem.ToolType;
-import necesse.level.gameObject.GameObject;
+import necesse.inventory.recipe.Tech;
+import necesse.level.gameObject.WorkstationObject;
 import necesse.level.maps.Level;
 import necesse.level.maps.light.GameLight;
 
 import java.awt.*;
 import java.util.List;
 
-public class ExampleObject extends GameObject {
+public class CraftingTable extends WorkstationObject {
 
     private GameTexture texture;
 
-    public ExampleObject() {
-        super(new Rectangle(4, 4, 26, 26)); // Collision relative to the tile it's placed on
-        // Remember that tiles are 32x32 pixels in size
-        hoverHitbox = new Rectangle(0, -32, 32, 64); // 2 tiles high mouse hover hitbox
+    public CraftingTable() {
+        this.drawDmg = false;
         toolType = ToolType.ALL; // Can be broken by all tools
         isLightTransparent = true; // Lets light pass through
-        mapColor = new Color(31, 150, 148); // Also applies as debris color if not set
+        mapColor = new Color(125, 71, 0); // Also applies as debris color if not set
+    }
+
+    @Override
+    public Rectangle getCollision(Level level, int x, int y, int rotation) {
+        return new Rectangle(x * 32+3, y * 32 + 12, 26, 12);
     }
 
     @Override
@@ -71,5 +76,10 @@ public class ExampleObject extends GameObject {
     public ObjectEntity getNewObjectEntity(Level level, int x, int y) {
         // If this object has an object entity, return something else
         return null;
+    }
+
+    @Override
+    public Tech[] getCraftingTechs() {
+        return new Tech[]{RecipeTechRegistry.WORKSTATION, RecipeTechRegistry.NONE};
     }
 }
