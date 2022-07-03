@@ -1,0 +1,27 @@
+Items/objects:
+    Fireworks - cosmetic item that causes a safe explosion
+    Enderpearls - allows you to craft the enderchest, can also teleport you to location when thrown
+    Enderchest - chest that is linked to all other enderchests
+    Spawner - can be found in the mines, spawns specific mobs
+
+Mobs:
+    Creepers
+        - Drop gunpowder
+    Endermen
+        - Drop enderpearls
+
+Trinkets:
+    Totem of undying - prevents death once and is consumed on use
+
+Summons:
+    Silverfish summon - summons silverfish to help you fight
+
+Biomes:
+    The minecraft biome
+        - Accessed by boat
+        - Full texture rework to match minecrafts asthetic
+        - Spawns only minecraft related mobs
+        - Caves include minecraft features and ores
+
+    The nether
+        - Accessed by constructing nether portal

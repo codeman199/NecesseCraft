@@ -1,0 +1,10 @@
+[object]
+craftingtable=Crafting Table
+
+[item]
+woodenplank=Wooden Plank
+gunpowder=Gunpowder
+goldenapple=Golden Apple
+
+[itemtooltip]
+totemofundyingtip=Prevents death once, this trinket is destroyed on use
